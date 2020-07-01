@@ -1,5 +1,7 @@
 //prepare the Input, then put it into the output string. 
+let executed = false
 function getInput(){
+    if(executed != true){
     let input = document.getElementById('input').value;
     let output = document.getElementById('output');
     // Substrings to find: [CHAT], Joined
@@ -10,14 +12,18 @@ function getInput(){
         
     }
     input1 = input1.replace(input1.slice(input1.search(/(Joined)/), input1.search(/(Joined)/) + 17), "");
-    output.innerHTML = input1;
-
+    executed = true;
     guildList(input1);
     let gxpButton = document.getElementById('xp')
     let emButton = document.getElementById('em')
     gxpButton.style.visibility = 'visible';
     emButton.style.visibility = 'visible';
+    }
+    output.innerHTML = input1;
+
     
+    
+
 }
 let gList = [[]]
 function guildList(str){   
