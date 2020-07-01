@@ -3,34 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Readable Guild List</title>
-    <style>
-        body{
-        font-family: 'Calibri';
-        text-align: center;
-        }
-    </style>
-    <script>
-    function getInput(){
-        let input = document.getElementById('input').value;
-        let output = document.getElementById('output');
-        // Substrings to find: [CHAT], Joined
-        input1 = input.replace(input.slice(0, 56), "")
-        input1 = input1.replace(/� -/g, " Emeralds");
-        while (input1.search(/(CHAT)/) != -1){
-            input1 = input1.replace(input1.slice(input1.search(/(Joined)/), input1.search(/(CHAT)/) + 6),"<br>");
-            
-        }
-        input1 = input1.replace(input1.slice(input1.search(/(Joined)/), input1.search(/(Joined)/) + 17), "");
-        output.innerHTML = input1;
-    }
-
-    </script>
 </head>
 <body>
     <h3>Paste the guild list from your minecraft logs in the area below:</h3>
     <input type="text" name="Input" id="input"><br>
-    <button type="submit" onclick="getInput();">Magic Button</button>
+    <button type="submit" onclick="getInput();">Magic Button</button> <br>
+    <button type="submit" onclick="emLeaderboard(gList);" id='em'>Show Emerald-Leaderboard</button><br>
+    <button type="submit" onclick="gxpLeaderboard(gList);" id='xp'>Show GXP-Leaderboard</button> <br>
     <h3>Output:</h3>
     <span id='output'>Try pressing the button and you'll see the magic.</span>
 </body>
