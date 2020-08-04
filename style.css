@@ -5,3 +5,24 @@ body{
 #em, #xp{
     visibility: hidden;
 }
+a:link{
+    color: #190237;
+    text-decoration: none;
+}
+a:visited{
+    color: #190237;
+    text-decoration: none;
+}
+button:hover{
+    border-color: red;
+    animation-name: button;
+    animation-duration: 10s;
+}
+@keyframes button{
+    from{
+        border-color:black;
+    }
+    to{
+        border-color: red
+    }
+}
