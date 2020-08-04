@@ -1,4 +1,5 @@
 //prepare the Input, then put it into the output string. 
+
 let executed = false
 function getInput(){
     if(executed != true){
@@ -20,11 +21,9 @@ function getInput(){
     emButton.style.visibility = 'visible';
     }
     output.innerHTML = input1;
-
-    
-    
-
 }
+ 
+
 let gList = [[]]
 function guildList(str){   
     for(i = 1; i<=input1.match(/#/g).length; i++){
@@ -39,6 +38,7 @@ function guildList(str){
         str = str.replace(str.slice(str.search(/#/),str.search(/(<br>)/) + 4), "")
     }
     gList.shift()
+    setCookie("list", gList, 7);
     return gList
 }
 function emLeaderboard(list){
