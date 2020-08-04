@@ -70,6 +70,8 @@ function putInList(data){
     let resText1 = "";
     let resText2 = "";
 function JSONTest(){
+    let timestamp = document.getElementById('timestamp')
+    timestamp.innerHTML += new Date().toString() + "<br>";
     let xml = new XMLHttpRequest();
     xml.open("GET", "https://api.wynncraft.com/public_api.php?action=statsLeaderboard&type=guild&timeframe={}");
     xml.onreadystatechange = function(){
