@@ -38,7 +38,6 @@ function guildList(str){
         str = str.replace(str.slice(str.search(/#/),str.search(/(<br>)/) + 4), "")
     }
     gList.shift()
-    setCookie("list", gList, 7);
     return gList
 }
 function emLeaderboard(list){
