@@ -46,7 +46,7 @@ function emLeaderboard(list){
     });
     ems = "";
     for(i=0; i < input1.match(/#/g).length; i++){
-        ems += (i+1) + ". " + em[i][0] + ": " + em[i][2].toLocaleString(undefined) + " Emeralds" + "<br>" 
+        ems += (i+1) + ". " + em[i][0] + ": " + em[i][2].toLocaleString("en") + " Emeralds" + "<br>" 
     }
     output.innerHTML = ems;
 
@@ -58,7 +58,7 @@ function gxpLeaderboard(list){
     });
     gxp = "";
     for(i=0;i <input1.match(/#/g).length; i++){
-       gxp += (i+1) + ". " + xpL[i][0] + ": " + xpL[i][1].toLocaleString(undefined) + " XP" + "<br>"
+       gxp += (i+1) + ". " + xpL[i][0] + ": " + xpL[i][1].toLocaleString("en") + " XP" + "<br>"
     }
     output.innerHTML = gxp;
 }
