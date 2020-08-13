@@ -45,10 +45,12 @@ function emLeaderboard(list){
         return b[2] - a[2]
     });
     ems = "";
+    emSum = 0;
     for(i=0; i < input1.match(/#/g).length; i++){
         ems += (i+1) + ". " + em[i][0] + ": " + em[i][2].toLocaleString("en") + " Emeralds" + "<br>" 
+        emSum += em[i][2]
     }
-    output.innerHTML = ems;
+    output.innerHTML = ems + "<br> The guild has collected " + emSum.toLocaleString("en") + " Emeralds from contributions. <br> #1 in Emeralds (" + em[0][0] +") has contributed about " + Math.round(((em[0][2] / emSum )* 100) * 100) /100 +"% of the total " + "(" + em[0][2].toLocaleString("en") + " Emeralds)";
 
 }
 
@@ -57,8 +59,11 @@ function gxpLeaderboard(list){
         return b[1] - a[1]
     });
     gxp = "";
+    gxpSum = 0;
     for(i=0;i <input1.match(/#/g).length; i++){
-       gxp += (i+1) + ". " + xpL[i][0] + ": " + xpL[i][1].toLocaleString("en") + " XP" + "<br>"
+       gxp += (i+1) + ". " + xpL[i][0] + ": " + xpL[i][1].toLocaleString("en") + " XP" + "<br>";
+        gxpSum += xpL[i][1]
     }
-    output.innerHTML = gxp;
+
+    output.innerHTML = gxp + "<br> The guild has collected " + gxpSum.toLocaleString("en") + " GXP in total. <br> #1 in GXP ("+ xpL[0][0] +") has collected about " + Math.round(((xpL[0][1] / gxpSum )* 100) * 100) /100+ "% of the total " + "(" + xpL[0][1].toLocaleString("en") +" GXP)";
 }
