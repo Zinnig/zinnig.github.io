@@ -48,7 +48,7 @@ function putInList(data){
                             getGxp(resText2); 
                             gxp10 = ""
     for (i = 0; i < 100; i++){
-        gxp10 += (i+1) + ". " +  mostGxpListMult[i][0]+ "[" + mostGxpListMult[i][1] + "]" +": "+ formatNumber(mostGxpList[i]) + "<br>" ;
+        gxp10 += (i+1) + ". " +  mostGxpListMult[i][0]+ "[" + mostGxpListMult[i][1] + "]" +": "+ formatNumber(mostGxpList[i]) + " (" +((mostGxpList[i]/249232940)* 100).toFixed(2) + "% of 106)" + "<br>" ;
     }
         let output = document.getElementById('output');
         output.innerHTML = gxp10;
