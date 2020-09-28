@@ -17,8 +17,10 @@ function getInput(){
     guildList(input1);
     let gxpButton = document.getElementById('xp')
     let emButton = document.getElementById('em')
+    let sortButton = document.getElementById('sort');
     gxpButton.style.visibility = 'visible';
     emButton.style.visibility = 'visible';
+    sortButton.style.visibility = 'visible';
     }
     output.innerHTML = input1;
 }
@@ -66,4 +68,35 @@ function gxpLeaderboard(list){
     }
 
     output.innerHTML = gxp + "<br> The guild has collected " + gxpSum.toLocaleString("en") + " GXP in total. <br> #1 in GXP ("+ xpL[0][0] +") has collected about " + Math.round(((xpL[0][1] / gxpSum )* 100) * 100) /100+ "% of the total " + "(" + xpL[0][1].toLocaleString("en") +" GXP)";
+}
+let pattern = [];
+function getPattern(){
+    pattern = [];
+    let patternString = document.getElementById('pattern').value;
+    patternString1 = patternString.replace(/ /g, "");
+    while (patternString1.search(/,/) != -1){
+        pattern.push(patternString1.substr(0, patternString1.search(/,/)))
+        patternString1 = patternString1.replace(patternString1.substr(0, patternString1.search(/,/) + 1), "");
+    }
+    pattern.push(patternString1)
+}
+let list1;
+let sortL;
+function sortedLeaderboard(list){
+    list1 = [...list]
+    list.forEach(function(elem){
+        if(pattern.indexOf(elem[0]) == -1){
+            list1.splice(list1.indexOf(elem), 1)
+        }
+    })
+    sortL = list1.sort(function(a, b){
+         return pattern.indexOf(a[0]) - pattern.indexOf(b[0])
+});
+    sortString = ""
+    for(i=0;i<sortL.length; i++){
+        if(pattern.indexOf(sortL[i][0] != -1)){
+        sortString += `${sortL[i][0]}: ${sortL[i][1].toLocaleString("en")} XP, ${sortL[i][2].toLocaleString("en")} Emeralds<br>`
+    }
+}
+    output.innerHTML = sortString;
 }
