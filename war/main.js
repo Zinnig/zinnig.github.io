@@ -7,7 +7,7 @@ function getInput(){
     inputTime = inputMSInt
     inputTime += 1420070400000
     inputTimeStamp = new Date(inputTime);
-    output.innerHTML = `${inputTimeStamp.getFullYear()}/${inputTimeStamp.getMonth() + 1}/${inputTimeStamp.getDate()} ${inputTimeStamp.getHours()}:${inputTimeStamp.getMinutes()}:${inputTimeStamp.getSeconds()}`
+    output.innerHTML = `${inputTimeStamp.getUTCFullYear()}/${inputTimeStamp.getUTCMonth() + 1}/${inputTimeStamp.getUTCDate()} ${inputTimeStamp.getUTCHours()}:${inputTimeStamp.getUTCMinutes()}:${inputTimeStamp.getUTCSeconds()}`
     
 
 }
