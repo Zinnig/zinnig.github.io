@@ -3,7 +3,7 @@
 let executed = false
 function getInput(){
     if(executed != true){
-    let input = document.getElementById('input').value;
+    input = document.getElementById('input').value;
     let output = document.getElementById('output');
     // Substrings to find: [CHAT], Joined
     input1 = input.replace(input.slice(0, 56), "")
@@ -12,7 +12,7 @@ function getInput(){
         input1 = input1.replace(input1.slice(input1.search(/(Joined)/), input1.search(/(CHAT)/) + 6),"<br>");
         
     }
-    input1 = input1.replace(input1.slice(input1.search(/(Joined)/), input1.search(/(Joined)/) + 17), "");
+    /*input1 = input1.replace(input1.slice(input1.search(/(Joined)/), input1.search(/(Joined)/) + 17), "");*/
     executed = true;
     guildList(input1);
     let gxpButton = document.getElementById('xp')
@@ -95,7 +95,7 @@ function sortedLeaderboard(list){
     sortString = ""
     for(i=0;i<sortL.length; i++){
         if(pattern.indexOf(sortL[i][0] != -1)){
-        sortString += `${sortL[i][0]}: ${sortL[i][1].toLocaleString("en")} XP, ${sortL[i][2].toLocaleString("en")} Emeralds<br>`
+        sortString += `${sortL[i][0]}: ${sortL[i][2].toLocaleString("en")} Emeralds, ${sortL[i][1].toLocaleString("en")} XP<br>`
     }
 }
     output.innerHTML = sortString;
