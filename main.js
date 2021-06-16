@@ -84,7 +84,7 @@ let list1;
 let sortL;
 function sortedLeaderboard(list){
     list1 = [...list]
-    list1.forEach(function(elem){
+    list.forEach(function(elem){
         if(pattern.indexOf(elem[0]) == -1){
             console.log(list1.splice(list1.indexOf(elem), 1))
         }
