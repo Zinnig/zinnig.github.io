@@ -18,7 +18,7 @@ async function getGuildData() {
             console.log('error');
         }
         if (obj.error) {
-            document.getElementById("title").innerHTML = "Invalid guild name. Example: <a href='?guild=Avicia'>Avicia</a>"
+            document.getElementById("title").innerHTML = "Invalid guild name. Example: <a href='?guild=Paladins United'>Paladins United</a>"
         }
     }
     updateChangeLeaderboard(res)
