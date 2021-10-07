@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guild XP</title>
+    <link href="Guild%20XP_files/bootstrap.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="Guild%20XP_files/popper.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+    <script src="Guild%20XP_files/bootstrap.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="Guild%20XP_files/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <a href="https://www.avicia.tk/guildxp/">*yoink*</a>
+        <div class="header">
+            <h1 id="title">Invalid guild name. Example: <a href="https://www.zinnig.github.io/gxp/?guild=Paladins%20United">Paladins United</a></h1>
+            <div>
+                <form action="/" id="guild-change">
+                    <label for="guild-name">Guild Name</label>
+                    <input type="text" name="guild-name" id="guild-name">
+                    <input type="submit" value="Change" id="guild-name-btn">
+                </form>
+                <p id="totalgxp">Total XP Gained:</p>
+            </div>
+            <!-- <div>
+                <label for="interval">Interval: </label>
+                <input type="number" name="interval" id="interval" placeholder="Interval in seconds" value=60>
+                <input type="button" value="Change" id="change-interval">
+            </div> -->
+        </div>
+        <div class="content" id="content">
+            <table class="table table-striped table-dark leaderboards">
+                <thead><tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Total</th>
+                </tr>
+                </thead>
+                <tbody id="total-leaderboard"></tbody>
+            </table>
+            <table class="table table-striped table-dark leaderboards">
+                <thead><tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Change</th>
+                </tr>
+                </thead><tbody id="change-leaderboard"></tbody>
+            </table>
+        </div>
+    </div>
+    <div id="request-timer">0m 56s</div>
+
+    <script src="Guild%20XP_files/main.js"></script>
+
+
+</body></html>
