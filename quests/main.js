@@ -4,6 +4,10 @@ const LE_Quests = [
         le: 32768
     },
     {
+        name: "The Ultimate Weapon",
+        le: 28672
+    },
+    {
         name: "Dwarves and Doguns Part IV",
         le: 20480
     },
@@ -20,6 +24,10 @@ const LE_Quests = [
         le: 16384
     },
     {
+        name: "Master Piece",
+        le: 12288
+    },
+    {
         name: "The Feathers Fly Part II",
         le: 12288
     },
@@ -34,6 +42,10 @@ const LE_Quests = [
     {
         name: "The Envoy Part I",
         le: 9152
+    },
+    {
+        name: "The Fortuneteller",
+        le: 8192
     },
     {
         name: "A Marauder's Dues",
