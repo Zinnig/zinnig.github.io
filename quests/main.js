@@ -181,7 +181,7 @@ run = () => {
                         cell1 = row.insertCell();
                         cell1.innerHTML = "​";
                         cell1.style.backgroundColor = clasz.data.find(q => q.name === quest.name).completed ? "green" : clasz.class.clevel < quest.level ? "gray": "red";
-                        total += clasz.data.find(q => q.name === quest.name).completed ? 0 : quest.le;
+                        total += (clasz.data.find(q => q.name === quest.name).completed || clasz.class.clevel < quest.level) ? 0 : quest.le;
                     })
                 })
                 output.innerHTML = `Possible LE to be gained: ${total.toLocaleString("en")}`;
