@@ -4,6 +4,7 @@ run = () => {
     ign = document.getElementById('ign').value;
     table = document.getElementById('table');
     tr = document.getElementById('tr');
+    output = document.getElementById('output');
     l = table.rows.length; //Amount of rows
     if (l > 1) {
         for (i = l - 1; i > 0; i--) {
@@ -43,10 +44,23 @@ run = () => {
                         cell1.style.backgroundColor = clasz.data.find(q => q.name === quest).completed ? "green" : "red";
                     })
                 })
+                output.innerHTML = `Total Quest completed: ${getAmountOfCompletedQuests(completedQuests)}/${quests.length * res.data[0].classes.length}`;
             } catch (e) {
                 console.log(e);
             }
         }
     }
     xml1.send();
+}
+
+getAmountOfCompletedQuests = (completedQuests) => {
+    total = 0;
+    for(const clazz of completedQuests){
+        for(const quest of clazz.data){
+            if(quest.completed){
+                total++;
+            }
+        }
+    }
+    return total;
 }
