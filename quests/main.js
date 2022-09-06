@@ -184,7 +184,7 @@ run = () => {
                         total += (clasz.data.find(q => q.name === quest.name).completed || clasz.class.clevel < quest.level) ? 0 : quest.le;
                     })
                 })
-                output.innerHTML = `Possible LE to be gained: ${total.toLocaleString("en")}`;
+                output.innerHTML = `Possible Emeralds to be gained: ${total.toLocaleString("en")}`;
             } catch (e) {
                 console.log(e);
             }
